@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
  <head>
   <meta charset="utf-8" />
 <!--   <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no" /> -->
-  <title>HTML5</title>
-  <!-- {literal} -->
+<!--   <title>HTML5</title>
+  <!-- {literal}
        <script type='text/javascript'>
         window['li'+'ve'+'T'+'e'+'x'] = true,
         window['live'+'Tex'+'ID'] = 10032525,
@@ -18,7 +18,7 @@
         if ( c ) c['p'+'arent'+'Node']['insert'+'B'+'efor'+'e'](t, c);
         else document['do'+'cumen'+'tEleme'+'nt']['f'+'irst'+'Chil'+'d']['appe'+'nd'+'Chi'+'ld'](t);
         })();
-        </script>
+        </script> -->
         <!-- {/literal} -->
   <!-- {literal} -->
 <!--        <script type='text/javascript'>
@@ -54,8 +54,500 @@
         })();
         </script> -->
         <!-- {/literal} --> -->
- </head>
+<!--  </head>
  <body>
   <p>Привет, мир</p>
  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<head>
+<title>
+New Widgets Test
+</title>
+<script type="text/javascript">
+	function unstableButtons()
+	{
+		var buttons = [];
+		switch(window.unstable_id)
+		{
+			case "10021205":
+			buttons = [
+					"liveTexButton_47003",
+					];
+				break;
+			case "10021206":
+			buttons = [
+					"liveTexButton_47005",
+					];
+				break;
+			case "10009171":
+				buttons = [
+					"liveTexButton_16521",
+					];
+				break;
+			case "10012252":
+				buttons = [
+					"liveTexButton_22689",
+					];
+				break;
+			case "10000182":
+				buttons = [
+					"liveTexButton_259",
+					"liveTexButton_271",
+					"liveTexButton_267",
+					"liveTexButton_272",
+					"liveTexButton_283",
+					"liveTexButton_284",
+					"liveTexButton_442",
+					/*sound unstable*/
+					"liveTexButton_686",
+					"liveTexButton_696",
+					"liveTexButton_704",
+					/*sound test*/
+					"liveTexButton_576",
+					"liveTexButton_579",
+					];
+				break;
+			case "10000103":
+				buttons = [
+					"liveTexButton_201",
+					"liveTexButton_211",
+					"liveTexButton_209",
+					"liveTexButton_212",
+					"liveTexButton_269",
+					"liveTexButton_388",
+					"liveTexButton_606",
+					"liveTexButton_702",
+					"liveTexButton_703"];
+				break;
+			case "10000183":
+				buttons = [
+					"liveTexButton_400",
+					"liveTexButton_401" ];
+				break;
+			case "10000248":
+				buttons = [
+					"liveTexButton_346",
+					"liveTexButton_347",
+					"liveTexButton_348" ];
+				break;
+			case "10000341":
+				buttons = [
+					"liveTexButton_485" ];
+				break;
+			case "10000044":
+				buttons = [
+					"liveTexButton_104" ];
+				break;
+			case "10000448":
+				buttons = [
+					"liveTexButton_596" ];
+				break;
+			case "10000449":
+				buttons = [
+					"liveTexButton_597" ];
+				break;
+			case "10005234":
+				buttons = [
+					"liveTexButton_7055",
+					"liveTexButton_7087" ];
+				break;
+			}
+			printButtons(buttons);
+	}
+	function stableButtons()
+	{
+		var buttons = [];
+		switch(window.stable_id)
+		{
+			case "12991":
+				buttons = [
+					"liveTexButton_2842",
+					"liveTexButton_2909",
+					"liveTexButton_3839",
+					"liveTexButton_3837",
+					/*sound stable*/
+					"liveTexButton_13619",
+					"liveTexButton_13620",
+					"liveTexButton_15658"];
+				break;
+			case "13977":
+				buttons = [
+					"liveTexButton_3846"];
+				break;
+			case "12764":
+				buttons = [
+					"liveTexButton_2607",
+					"liveTexButton_3701",
+					"liveTexButton_3702"];
+				break;
+			case "23414":
+				buttons = [
+					"liveTexButton_13764"];
+				break;
+			case "25232":
+				buttons = [
+					"liveTexButton_15657"];
+				break;
+		}
+		printButtons(buttons);
+	}
+</script>
+<link rel="icon" href="/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<style>
+			body {
+				padding-left: 20px; /* 60px to make the container go all the way to the bottom of the topbar */
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+		<!--script src="/js/bootstrap.js"></script-->
+		<script type="text/javascript">
+		function setCookie(c_name,value,exdays) {
+			var exdate=new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()) + "; path=/";
+			document.cookie=c_name + "=" + c_value;
+		}
+
+		function getCookie(c_name) {
+			var i,x,y,ARRcookies=document.cookie.split(";");
+			for (i=0;i<ARRcookies.length;i++)	{
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if (x==c_name)
+        {
+          return unescape(y);
+        }
+      }
+		}
+
+		function deleteLiveTexCookies() {
+			var i,x,y,ARRcookies=document.cookie.split(";");
+			for (i=0;i<ARRcookies.length;i++) {
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if(x.match("^livetex_*") || x.match("^ltx_*") ||
+            x.match("^livetext_*") || x.match("^lt_*")) {
+
+          document.cookie = x + "=;domain=;expires=Thu, 01-Jan-1970 00:00:01 GMT";
+          document.cookie = x + "=;path=/;domain=;expires=Thu, 01-Jan-1970 00:00:01 GMT";
+        }
+      }
+		}
+
+		function updateSettings(e) {
+			var key=e.keyCode || e.which;
+			if (key==13) {
+				saveSettings();
+				document.location.reload();
+			}
+		}
+
+		function is_empty(value) {
+			if(value == "undefined" || value == "") {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		function onLoadSettings() {
+			loadSettings();
+			loadVisitor();
+			if(is_empty(document.getElementById("port").value)) {
+				document.getElementById("port").value = 03;
+			}
+			if(!eval(document.getElementById("unstable_id").value)) {
+				document.getElementById("unstable_id").value = 10032525		}
+			if(!eval(document.getElementById("stable_id").value)) {
+				document.getElementById("stable_id").value = 47894			}
+
+			saveSettings();
+		}
+
+    var keyStr = "ABCDEFGHIJKLMNOP" +
+                 "QRSTUVWXYZabcdef" +
+                 "ghijklmnopqrstuv" +
+                 "wxyz0123456789+/" +
+                 "=";
+
+    function encode64(input) {
+       input = escape(input);
+       var output = "";
+       var chr1, chr2, chr3 = "";
+       var enc1, enc2, enc3, enc4 = "";
+       var i = 0;
+
+       do {
+          chr1 = input.charCodeAt(i++);
+          chr2 = input.charCodeAt(i++);
+          chr3 = input.charCodeAt(i++);
+
+          enc1 = chr1 >> 2;
+          enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+          enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+          enc4 = chr3 & 63;
+
+          if (isNaN(chr2)) {
+             enc3 = enc4 = 64;
+          } else if (isNaN(chr3)) {
+             enc4 = 64;
+          }
+
+          output = output +
+             keyStr.charAt(enc1) +
+             keyStr.charAt(enc2) +
+             keyStr.charAt(enc3) +
+             keyStr.charAt(enc4);
+          chr1 = chr2 = chr3 = "";
+          enc1 = enc2 = enc3 = enc4 = "";
+       } while (i < input.length);
+
+       return output;
+    }
+ getCookie("lt_sid")
+    function decode64(input) {
+       var output = "";
+       var chr1, chr2, chr3 = "";
+       var enc1, enc2, enc3, enc4 = "";
+       var i = 0;
+
+       // remove all characters that are not A-Z, a-z, 0-9, +, /, or =
+       var base64test = /[^A-Za-z0-9\+\/\=]/g;
+       if (base64test.exec(input)) {
+          alert("There were invalid base64 characters in the input text.\n" +
+                "Valid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\n" +
+                "Expect errors in decoding.");
+       }
+       input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+       do {
+          enc1 = keyStr.indexOf(input.charAt(i++));
+          enc2 = keyStr.indexOf(input.charAt(i++));
+          enc3 = keyStr.indexOf(input.charAt(i++));
+          enc4 = keyStr.indexOf(input.charAt(i++));
+
+          chr1 = (enc1 << 2) | (enc2 >> 4);
+          chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+          chr3 = ((enc3 & 3) << 6) | enc4;
+
+          output = output + String.fromCharCode(chr1);
+
+          if (enc3 != 64) {
+             output = output + String.fromCharCode(chr2);
+          }
+          if (enc4 != 64) {
+             output = output + String.fromCharCode(chr3);
+          }
+
+          chr1 = chr2 = chr3 = "";
+          enc1 = enc2 = enc3 = enc4 = "";
+
+       } while (i < input.length);
+
+       return unescape(output);
+    }
+
+		function loadVisitor() {
+		  if (typeof getCookie("lt_sid") !== 'undefined') {
+
+		    var visitorId = (decode64(getCookie("lt_sid")));
+        var ids = visitorId.split(':');
+        var length = ids.length - ids.length % 2;
+        var printableId = '';
+        for (var i = 0; i < length - 1; i += 2) {
+          printableId += ids[i] + ':' + ids[i + 1] + '<br/>';
+        }
+		    document.getElementById('visitor_id').innerHTML = printableId;
+		  } else {
+		    setTimeout(loadVisitor, 500);
+      }
+		}
+
+		function loadSettings() {
+			window.port = getCookie("port");
+			window.unstable_id = getCookie("unstable_id");
+			window.stable_id = getCookie("stable_id");
+			document.getElementById("port").value = window.port;
+			document.getElementById("unstable_id").value = window.unstable_id;
+			document.getElementById("stable_id").value = window.stable_id;
+		}
+
+		function saveSettings() {
+			window.port = document.getElementById("port").value;
+			window.unstable_id = document.getElementById("unstable_id").value;
+			window.stable_id = document.getElementById("stable_id").value;
+			setCookie("port", window.port);
+			setCookie("unstable_id", window.unstable_id);
+			setCookie("stable_id", window.stable_id);
+		}
+
+		function printButtons(buttons) {
+			buttons_in_div = "";
+			for (var i=0, len=buttons.length; i<len; ++i ) {
+				buttons_in_div += "<div class=\"" + buttons[i] + "\"></div><br/>";
+			}
+			document.getElementById("buttons").innerHTML = buttons_in_div;
+		}
+
+		var dimensions = (function(){
+      var dims = {};
+
+      // get screen width/height:
+      dims.screenWidth = function() {
+        return window.screen.width;
+      };
+      dims.screenHeight = function() {
+        return window.screen.height;
+      };
+
+      // get screen width/height minus chrome:
+      dims.availWidth = function() {
+        return window.screen.availWidth;
+      };
+      dims.availHeight = function() {
+        return window.screen.availHeight;
+      };
+
+      // get document width/height (with-out scrollbars):
+      if (window.document.compatMode == "CSS1Compat") { // if IE Standards Mode
+        dims.documentWidth = function() { return document.body.offsetWidth };
+        dims.documentHeight = function() { return document.body.offsetHeight };
+      }
+      else {
+        dims.documentWidth = function() { return document.documentElement.offsetWidth };
+        dims.documentHeight = function() { return document.documentElement.offsetHeight };
+      }
+
+      // get viewport width/height (with scrollbars):
+      if (window.innerWidth != null) {
+        dims.viewportWidth = function() {
+          return window.innerWidth;
+        };
+        dims.viewportHeight = function() {
+          return window.innerHeight;
+        };
+      } else if (window.document.compatMode == "CSS1Compat") {
+        // if IE in Standards Mode
+        dims.viewportWidth = function () {
+          return window.document.documentElement.clientWidth;
+        };
+        dims.viewportHeight = function () {
+          return window.document.documentElement.clientHeight;
+        };
+      }
+
+      // get scrollbar offsets:
+      if (window.pageXOffset != null) {
+        dims.scrollXOffset = function() {
+          return window.pageXOffset;
+        };
+        dims.scrollYOffset = function() {
+          return window.pageYOffset;
+        };
+      } else if (window.document.compatMode == "CSS1Compat"){
+      // if IE in Standards Mode
+        dims.scrollXOffset = function() { return document.documentElement.scrollLeft };
+        dims.scrollYOffset = function() { return document.documentElement.scrollTop };
+      }
+      return dims;
+    }());
+
+    function updateDimensions() {
+      if (window.dimensions instanceof Object) {
+        var text = '';
+        for (func in window.dimensions) {
+          if (typeof window.dimensions[func] === 'function') {
+            text += func + ': ' + window.dimensions[func]() + '\n<br />';
+          }
+        }
+        text += '<a href="#" onclick="return updateDimensions()">update dimensions</a>'
+        document.getElementById('dimensions').innerHTML = text;
+      }
+      return false;
+    }
+		</script>
+</head>
+<body>
+<h1>New Widgets</h1>
+﻿
+		<div id="content" style="width:670px;float:left;">
+		<table class="table-condensed"><tr>
+		<td valign=top>
+		<h3>Basic</h3>
+		<ul>
+			<li><a href = "/testing">Testing</a></li>
+			<li><a href = "/testing2">Testing 2</a></li>
+			<li><a href = "/unstable">Unstable</a></li>
+			<li><a href = "/unstable2">Unstable 2</a></li>
+			<li><a href = "/prerelease">Prerelease</a></li>
+			<li><a href = "/prerelease2">Prerelease 2</a></li>
+			<li><a href = "/stable">Stable</a></li>
+			<li><a href = "/stable2">Stable 2</a></li>
+			<li><a href = "/sla">Sla</a></li>
+			<li><a href = "/sla2">Sla 2</a></li>
+			<li><a href = "/hotfix">Hotfix</a></li>
+			<li><a href = "/hotfix2">Hotfix 2</a></li>
+			<li><a href = "/sandbox">Sandbox</a></li>
+			<li><a href = "/sandbox2">Sandbox 2</a></li>
+			<li><a href = "/new-widgets">New-widgets</a></li>
+			<li><a href = "/new-widgets2">New-widgets 2</a></li>
+			<li><a href = "/autotests">Autotests Selenium</a></li>
+			<li><a href = "/auto">Auto</a></li>
+			<li><a href = "/auto2">Auto 2</a></li>
+			<li><a href = "/auto9394">Auto9394</a></li>
+			<li><a href = "/auto9394 2">Auto9394 2</a></li>
+			<li><a href = "/prototype">Prototype</a></li>
+			<li><a href = "/prototype2">Prototype2</a></li>
+		</ul>
+
+		</td>
+		<td valign=top>
+		<h3>Settings</h3>
+		<table class="table" style="margin-bottom:7px">
+			<tr><td width='100px'>Unstable ID:</td><td><input type="text" id="unstable_id" name="unstable_id" onchange="saveSettings();" onkeypress="updateSettings(event);" style="margin-bottom:0px" /></td></tr>
+			<tr><td>Stable ID:</td><td><input type="text" id="stable_id" name="stable_id" onchange="saveSettings();" onkeypress="updateSettings(event);" style="margin-bottom:0px" /></td></tr>
+			<tr><td>Env (добавить 0):</td><td><input type="text" id="port" name="port" onchange="saveSettings();" onkeypress="updateSettings(event);" style="margin-bottom:0px" /></td></tr>
+			<tr><td>Ids:</td><td id="visitor_id"></td></tr>
+		</table>
+		<a href = "#" onclick = "deleteLiveTexCookies(); return false;">Удалить cookie LiveTex</a> и <a href = "#" onclick = "deleteLiveTexCookies(); document.location.reload(); window.localStorage.clear(); return false;">reload</a><br />
+		<a href="#" onclick="window.location.reload(); window.localStorage.clear(); return false;">localStorage.clear</a>
+		</td>
+		</tr>
+		</table>
+		</div>
+		<div id="dimensions" style="float: right; margin-right: 50px;"></div>
+		<script type="text/javascript">updateDimensions();</script>
+		<div id="buttons"></div>
+<script type="text/javascript"> /* build:::6 */
+onLoadSettings();
+var liveTex = true,
+liveTexID = window.unstable_id,
+liveTex_object = true;
+// window.LTX_URL = '//widgets-loader.global.livetex/';
+window.LTX_URL = 'http://widgets-loader.statistics-dev.livetex/';
+// /js/client.js
+(function() {
+	var lt = document.createElement('script');
+	lt.type ='text/javascript';
+	lt.async = true;
+	lt.src = window.LTX_URL + 'js/client.js';
+	var sc = document.getElementsByTagName('script')[0];
+	if ( sc ) sc.parentNode.insertBefore(lt, sc);
+		else document.documentElement.firstChild.appendChild(lt);
+})();
+</script>
+<div id="liveTexButton_5196"></div>
+<div id="liveTexButton_5188"></div>
+<div id="liveTexButton_8567"></div>
+<div class="liveTexButton_47003"></div>
+</body>
 </html>
