@@ -124,7 +124,8 @@
 
   if (window['LiveTex']['is_init'] !== true) {
     window['LiveTex']['is_init'] = true;
-    loadEnvSettings(loadAppJs);
+	  loadAppJs();
+//     loadEnvSettings(loadAppJs);
   } else {
     if (typeof console !== 'undefined' &&
         typeof console.error !== 'undefined') {
