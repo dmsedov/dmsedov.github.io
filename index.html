@@ -153,7 +153,8 @@
 
   if (window['LiveTex']['is_init'] !== true) {
     window['LiveTex']['is_init'] = true;
-	  loadEnvSettings(() => {});
+	  function nop() {};
+	  loadEnvSettings(nop);
 //    loadEnvSettings(loadAppJs);
   } else {
     if (typeof console !== 'undefined' &&
