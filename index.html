@@ -109,7 +109,8 @@
     xhr.open('GET', url, true);
     xhr.overrideMimeType('application/json; charset=utf-8');
     xhr.setRequestHeader('Accept', 'application/json');
-	  xhr.setRequestHeader('X-Ie-Redirect-Compatibility', 'true')
+	  xhr.setRequestHeader('X-Ie-Redirect-Compatibility', 'true');
+	  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onload = function() {
       window['LiveTex']['envSettings'] = JSON.parse(xhr.responseText);
       cb();
