@@ -106,7 +106,7 @@
     var xhr = new XMLHttpRequest();
     var url = LivetexSettings['BALANCER'] + '/get-client/?site_id=' +
       liveTexID.toString() + '&version=' + LTX_VERSION + '&target=settings_path' +'&rnd=' + random();
-//     xhr.overrideMimeType('application/json');
+    xhr.overrideMimeType('application/json; charset=utf-8');
     xhr.open('GET', url, true);
     xhr.onload = function() {
       window['LiveTex']['envSettings'] = JSON.parse(xhr.responseText);
