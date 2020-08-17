@@ -103,20 +103,9 @@
   }
 
   function loadEnvSettings(cb) {
-//     var xhr = new XMLHttpRequest();
-//     var url = LivetexSettings['BALANCER'] + '/get-client/?site_id=' +
-//       liveTexID.toString() + '&version=' + LTX_VERSION + '&target=settings_path' +'&rnd=' + random();
-//     xhr.open('GET', url, true);
-//     xhr.overrideMimeType('application/json; charset=utf-8');
-//     xhr.setRequestHeader('Accept', 'application/json');
-//     xhr.onload = function() {
-//       window['LiveTex']['envSettings'] = JSON.parse(xhr.responseText);
-//       cb();
-//     };
-//     xhr.send(null);
-	  
     var xhr = new XMLHttpRequest();
-    var url = 'https://widgets-2-omni-iframe.livetex.ru/js/widgetsSettings.json';
+    var url = LivetexSettings['BALANCER'] + '/get-client/?site_id=' +
+      liveTexID.toString() + '&version=' + LTX_VERSION + '&target=settings_path' +'&rnd=' + random();
     xhr.open('GET', url, true);
     xhr.overrideMimeType('application/json; charset=utf-8');
     xhr.setRequestHeader('Accept', 'application/json');
@@ -126,23 +115,16 @@
     };
     xhr.send(null);
 	  
-//     fetch("https://widgets-2-omni-iframe.livetex.ru/js/widgetsSettings.json", {
-//   "headers": {
-//     "accept": "application/json",
-//     "accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
-//     "cache-control": "no-cache",
-//     "pragma": "no-cache",
-//     "sec-fetch-dest": "empty",
-//     "sec-fetch-mode": "cors",
-//     "sec-fetch-site": "cross-site"
-//   },
-//   "referrer": "https://dmsedov.github.io/",
-//   "referrerPolicy": "no-referrer-when-downgrade",
-//   "body": null,
-//   "method": "GET",
-//   "mode": "cors",
-//   "credentials": "omit"
-// });
+//     var xhr = new XMLHttpRequest();
+//     var url = 'https://widgets-2-omni-iframe.livetex.ru/js/widgetsSettings.json';
+//     xhr.open('GET', url, true);
+//     xhr.overrideMimeType('application/json; charset=utf-8');
+//     xhr.setRequestHeader('Accept', 'application/json');
+//     xhr.onload = function() {
+//       window['LiveTex']['envSettings'] = JSON.parse(xhr.responseText);
+//       cb();
+//     };
+//     xhr.send(null);
   }
 
   if (/Opera Mini/.test(navigator.userAgent)) return false;
