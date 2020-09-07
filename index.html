@@ -85,7 +85,7 @@
   }
   function isFireFoxMobile() {
     var ua = window.navigator.userAgent;
-    return /(Mobile.+Firefox)|(CPU iPhone.+FxiOS)/.test(ua);
+     return /((Mobile|Tablet).+Firefox)|(CPU iPhone.+FxiOS)/.test(ua);
   }
 
   function nop() {}
