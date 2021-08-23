@@ -6,32 +6,21 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-         <!-- multibutton-->
-          <script type='text/javascript'>
-    window['ltOmniButtonConfig'] = {
-      buttons: [
-        {
-          "type": "vk",
-          "url": "https://vk.me/PageName"
-        },
-        {
-          "type": "facebook",
-          "url": "https://m.me/Name"
-        },
-        {
-          "type": "youtube",
-          "url": "https://youtube.com/"
-        }
-      ]
-    };
-    (function () {
-      var t = document.createElement('script');
-      t.type = 'text/javascript';
-      t.async = true;
-      t.src = 'https://widget-omnibutton.livetex.ru/container.main.js';
-      document.documentElement.firstElementChild.appendChild(t);
+        <script type='text/javascript'>
+window['ltOmniButtonConfig'] = {
+	buttons: [{"type":"telegram","url":"tg://resolve/?domain=aodatabank_bot"},{"type":"viber","chatURI":"viber://pa/?chatURI=databank"}]
+};
+
+(function () {
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = 'https://widget-omnibutton.livetex.ru/container.main.js';
+	var c = document.getElementsByTagName('script')[0];
+	if (c) c.parentNode.insertBefore(t, c);
+	else document.documentElement.firstElementChild.appendChild(t);
 })();
-        </script>
+</script>
     </head>
         
     <body>
