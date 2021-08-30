@@ -30,6 +30,12 @@ window['ltOmniButtonConfig'] = {
 		window['lt-lang'] = 'it';
 		window['li'+'v'+'eTex'+'ID'] = 10033126, //10032660, 
 		window['live'+'Tex_ob'+'je'+'ct'] = true;
+		(function() {
+		var t = document['cre'+'ate'+'Ele'+'ment']('script');
+		t.type ='text/javascript';
+		t.async = true;
+		t.src = '//'+'widgets-loader.alpha.dev.livetex.ru/js/client'+'.js';
+		var c = document['getElement'+'sByTag'+'Name']('script')[0];
 		if ( c ) c['par'+'e'+'ntNod'+'e']['inser'+'tBefor'+'e'](t, c);
 		else document['doc'+'umentE'+'lem'+'ent']['firs'+'t'+'C'+'h'+'il'+'d']['appen'+'dChil'+'d'](t);
 		})();
