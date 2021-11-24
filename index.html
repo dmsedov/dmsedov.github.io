@@ -9,9 +9,8 @@
     </head>
         
     <body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js" integrity="sha512-szJ5FSo9hEmXXe7b5AUVtn/WnL8a5VofnFeYC2i2z03uS2LhAch7ewNLbl5flsEmTTimMN0enBZg/3sQ+YOSzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
          <!-- stage-alpha -->
-        <!-- <script type='text/javascript'>
+        <script type='text/javascript'>
 		window['li'+'v'+'eT'+'ex'] = true,
 		window['li'+'v'+'eTex'+'ID'] = 10032528,
 		window['live'+'Tex_ob'+'je'+'ct'] = true;
@@ -24,88 +23,6 @@
 		if ( c ) c['par'+'e'+'ntNod'+'e']['inser'+'tBefor'+'e'](t, c);
 		else document['doc'+'umentE'+'lem'+'ent']['firs'+'t'+'C'+'h'+'il'+'d']['appen'+'dChil'+'d'](t);
 		})();
-        </script> -->
-	    <!--<script type='text/javascript'>
-window['ltOmniButtonConfig'] = {
-	buttons: [{"type":"telegram","url":"tg://resolve/?domain=aodatabank_bot"},{"type":"viber","chatURI":"viber://pa/?chatURI=databank"}]
-};
-
-(function () {
-	var t = document.createElement('script');
-	t.type = 'text/javascript';
-	t.async = true;
-	t.src = 'https://widget-multibutton.statistics-dev.livetex/container.main.js';
-	var c = document.getElementsByTagName('script')[0];
-	if (c) c.parentNode.insertBefore(t, c);
-	else document.documentElement.firstElementChild.appendChild(t);
-})();
-</script>-->
-	    <script type='text/javascript'>
-window['li'+'v'+'e'+'Te'+'x'] = true,
-window['li'+'veTe'+'xID'] = 172042,
-window['li'+'ve'+'Tex_obj'+'ect'] = true;
-(function() {
-var t = document['c'+'reateE'+'le'+'me'+'nt']('script');
-t.type ='text/javascript';
-t.async = true;
-t.src = '/'+'/cs15.l'+'ivet'+'ex.'+'ru/js'+'/client.js';
-var c = document['getElement'+'sByTag'+'Na'+'me']('script')[0];
-if ( c ) c['p'+'ar'+'e'+'ntNo'+'de']['inse'+'rtB'+'efore'](t, c);
-else document['docum'+'entEl'+'em'+'ent']['firs'+'tChi'+'ld']['appe'+'ndC'+'hil'+'d'](t);
-})();
-</script>
-<!-- {/literal} -->
-<script type='text/javascript'>
-var LiveTex = {
-    onLiveTexReady: function() {
-        // код, выполняемый после инициализации LiveTex Widgets API
-        console.log("Виджет загрузился на сайте!");
-        var descriptor = LiveTex.addEventListener(LiveTex.Event.CONVERSATION_STARTED, onConversationStarted);
-        LiveTex.setVisitorAttributes(
-            function() { console.log('атрибуты сохранены'); },
-            function(error) { console.log('Ошибка: ' + error); },
-            {
-                name: { 'name': 'Кушиков Пётр Сергеевич', 'is_editable': false },
-                contacts: [{
-                    'value': 'ykbpetka@gmail.com',
-                    'type': LiveTex.ContactType.EMAIL
-                }, {
-                    'value': '+79201230403',
-                'type': LiveTex.ContactType.PHONE
-                }]
-            }
-        );
-    }
-};
-
-function onConversationStarted(_) {
-    const personId = '222222222222222'
-    const attributes = [
-        {name: 'Имя', value: 'Кушиков Пётр Сергеевич'},
-        {name: 'Телефон', value: '+79201230403'},
-        {name: 'E-mail', value: 'ykbpetka@gmail.com'},
-        {name: 'Лицевой счет', value: '222222222222222'},
-        {name: 'Адрес', value: 'Тверская область , Тверь , Тверской пр-т , 3, 1'},
-        {name: 'УК', value: 'ООО "Тестовая УК"'},
-        {name: 'К оплате', value: '74904.95'}
-    ]
-    const secret = '62a79bba-0728-4304-9218-7088f9583e02'
-    const data = attributes
-        .map(_ => _.name + _.value)
-        .sort()
-        .join('')
-        .concat(secret)
-    var hash = sha256.create();
-    hash.update(data);
-    var hashi = hash.hex();
-    
-    console.log(hashi);
-    console.log(JSON.stringify(attributes));
-    const onSuccess = (_) => console.log('success')
-    const onFailure = (e) => console.log(`failure: ${e}`)
-        
-    LiveTex.setAttributes(personId, attributes, hashi, onSuccess, onFailure);
-}
-</script>
+	</script>
     </body>
     </html>
