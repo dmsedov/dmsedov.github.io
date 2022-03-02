@@ -846,19 +846,33 @@ sr.reveal('.sr-icons',{duration:600,scale:0.3,distance:'0px'},200);sr.reveal('.s
         })();
         </script> -->
         <!-- {/literal} -->
-	(function () {
-    var t = document.createElement('script');
-    t.type = 'text/javascript';
-    t.async = true;
-    // t.src = 'http://localhost:8080/container.main.js';
-    t.src = 'https://widget-multibutton.alpha.dev.livetex.ru/container.main.js';
-    // t.src = 'https://widget-omnibutton.livetex.ru/container.main.js';
-    var c = document.getElementsByTagName('script')[0];
-    // @ts-ignore
-    if (c) c.parentNode.insertBefore(t, c);
-    // @ts-ignore
-    else document.documentElement.firstElementChild.appendChild(t);
-  })();
-}
+	<script type='text/javascript'>
+    window['ltOmniButtonConfig'] = {
+      buttons: [
+        {
+          type: 'whatsapp',
+          phone: '+79998886655'
+        },
+        {
+          type: 'link',
+          url: 'https://livetex.ru/blog/'
+        },
+        {
+          type: 'youtube',
+          url: 'https://example.com/'
+        }
+      ]
+    };
+
+    (function () {
+      var t = document.createElement('script');
+      t.type = 'text/javascript';
+      t.async = true;
+      t.src = 'https://widget-omnibutton.livetex.ru/container.main.js';
+      var c = document.getElementsByTagName('script')[0];
+      if (c) c.parentNode.insertBefore(t, c);
+      else document.documentElement.firstElementChild.appendChild(t);
+    })();
+  </script>
     </body>
     </html>
