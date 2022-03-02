@@ -846,21 +846,19 @@ sr.reveal('.sr-icons',{duration:600,scale:0.3,distance:'0px'},200);sr.reveal('.s
         })();
         </script> -->
         <!-- {/literal} -->
-	<!-- {literal} -->
-        <script type='text/javascript'>
-        window['liv'+'eT'+'e'+'x'] = true,
-        window['l'+'iv'+'eT'+'exI'+'D'] = 10033126,
-        window['liveTe'+'x_o'+'bj'+'e'+'c'+'t'] = true;
-        (function() {
-        var t = document['cre'+'ateEle'+'me'+'n'+'t']('script');
-        t.type ='text/javascript';
-        t.async = true;
-        t.src = '//cs15.live'+'tex.ru/js/cli'+'ent.j'+'s';
-        var c = document['getEle'+'ment'+'sByT'+'agN'+'ame']('script')[0];
-        if ( c ) c['pare'+'n'+'tNod'+'e']['inse'+'rtBef'+'o'+'re'](t, c);
-        else document['docume'+'ntEle'+'ment']['firs'+'tChi'+'l'+'d']['a'+'ppen'+'dChil'+'d'](t);
-        })();
-        </script>
-        <!-- {/literal} -->
+	(function () {
+    var t = document.createElement('script');
+    t.type = 'text/javascript';
+    t.async = true;
+    // t.src = 'http://localhost:8080/container.main.js';
+    t.src = 'https://widget-multibutton.alpha.dev.livetex.ru/container.main.js';
+    // t.src = 'https://widget-omnibutton.livetex.ru/container.main.js';
+    var c = document.getElementsByTagName('script')[0];
+    // @ts-ignore
+    if (c) c.parentNode.insertBefore(t, c);
+    // @ts-ignore
+    else document.documentElement.firstElementChild.appendChild(t);
+  })();
+}
     </body>
     </html>
