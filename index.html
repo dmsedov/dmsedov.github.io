@@ -10,7 +10,7 @@
         
     <body>
  <!-- {literal} -->
-        <script type='text/javascript'>
+<!--         <script type='text/javascript'>
         window['l'+'i'+'v'+'e'+'T'+'ex'] = true,
         window['li'+'ve'+'T'+'e'+'x'+'I'+'D'] = 168422,
         window['li'+'veTex'+'_o'+'bject'] = true;
@@ -23,8 +23,124 @@
         if ( c ) c['pa'+'ren'+'t'+'Nod'+'e']['insert'+'Befo'+'re'](t, c);
         else document['docu'+'men'+'t'+'Elem'+'ent']['first'+'Chi'+'ld']['appe'+'n'+'dC'+'hi'+'ld'](t);
         })();
-        </script>
+        </script> -->
         <!-- {/literal} -->
+        <script type="text/javascript">
+           const tabCommunicationProvider = () => {
+              const channel = new BroadcastChannel('lt-customer-care');
+
+              return {
+                sendMessage: (message) => channel.postMessage(message),
+                setEventListener: (callback) => {
+                  channel.onmessage = (event) => {
+                    callback(event);
+                  };
+                },
+                clean: () => {
+                  channel.close();
+                }
+              }
+            };
+             const idleLogout = (timeOutCallback, activityCallback) => {
+                  let timerID;
+
+                  const trackedEvents = [
+                    'mousemove',
+                    'mousedown',
+                    'click',
+                    'keydown',
+                    'scroll'
+                  ];
+
+                  const executeCallbackWithTimer = (e) => {
+                    clearTimeout(timerID);
+                    timerID = setTimeout(timeOutCallback, 10000);
+                    activityCallback();
+                  }
+
+                  const addEventListeners = () => {
+                    trackedEvents.forEach((eventName) => {
+                      document.addEventListener(eventName, executeCallbackWithTimer, true);
+                    });
+                  }
+
+                  const removeEventListeners = () => {
+                    trackedEvents.forEach((eventName) => {
+                      document.removeEventListener(eventName, executeCallbackWithTimer, true);
+                    });
+                  }
+
+                  addEventListeners();
+                  executeCallbackWithTimer();
+
+                  return () => {
+                    removeEventListeners();
+                    clearTimeout(timerID);
+                  }
+                };
+            
+            const tabEvents = {
+                  RE_INIT: 'reinit',
+                  LOG_OUT: 'logOut'
+                }
+
+const observeForUserActivity = (logOutCallback) => {
+  const { sendMessage, setEventListener, clean } = tabCommunicationProvider();
+
+  const logOut = () => {
+    logOutCallback();
+    sendMessage({ type: tabEvents.LOG_OUT });
+  };
+
+  const onActivityCallback = () => {
+    sendMessage({ type: tabEvents.RE_INIT });
+  }
+
+  let cleanTrackActivity = idleLogout(logOut, onActivityCallback);
+
+  sendMessage({ type: tabEvents.RE_INIT });
+
+  const reInitTracker = () => {
+    cleanTrackActivity();
+    cleanTrackActivity = idleLogout(logOut, onActivityCallback);
+  }
+
+  const visibilitychangeHandler = () => {
+    if (document.hidden) {
+      return;
+    }
+    reInitTracker();
+    sendMessage({ type: tabEvents.RE_INIT })
+  }
+
+  document.removeEventListener('visibilitychange', visibilitychangeHandler);
+
+  document.addEventListener('visibilitychange', visibilitychangeHandler);
+
+  const callback = ({ data: { type }}) => {
+    switch (type) {
+      case tabEvents.RE_INIT:
+        reInitTracker();
+        break;
+      case tabEvents.LOG_OUT:
+        cleanTrackActivity();
+        clean();
+        logOutCallback();
+        break;
+      default:
+        break;
+    }
+  }
+
+  setEventListener(callback)
+}
+
+const logOut = () => {
+    alert('/logout');
+}
+
+observeForUserActivity(logOut)
+        </script>
 </body>
 
 </html>
