@@ -26,65 +26,71 @@
         </script> -->
         <!-- {/literal} -->
         <script type="text/javascript">
-           const tabCommunicationProvider = () => {
-              const channel = new BroadcastChannel('lt-customer-care');
+            const tabCommunicationProvider = () => {
+  const channel = new BroadcastChannel('lt-customer-care');
 
-              return {
-                sendMessage: (message) => channel.postMessage(message),
-                setEventListener: (callback) => {
-                  channel.onmessage = (event) => {
-                    callback(event);
-                  };
-                },
-                clean: () => {
-                  channel.close();
-                }
-              }
-            };
+  return {
+    sendMessage: (message) => channel.postMessage(message),
+    setEventListener: (callback) => {
+      channel.onmessage = (event) => {
+        callback(event);
+      };
+    },
+    clean: () => {
+      channel.close();
+    }
+  }
+}
+            
              const idleLogout = (timeOutCallback, activityCallback) => {
-                  let timerID;
+  let timerID;
 
-                  const trackedEvents = [
-                    'mousemove',
-                    'mousedown',
-                    'click',
-                    'keydown',
-                    'scroll'
-                  ];
+  const trackedEvents = [
+    'mousemove',
+    'mousedown',
+    'click',
+    'keydown',
+    'scroll'
+  ];
 
-                  const executeCallbackWithTimer = (e) => {
-                    clearTimeout(timerID);
-                    timerID = setTimeout(timeOutCallback, 10000);
-                    activityCallback();
-                  }
+  const executeCallbackWithTimer = (e) => {
+    clearTimeout(timerID);
+    timerID = setTimeout(timeOutCallback, 10000);
+  }
 
-                  const addEventListeners = () => {
-                    trackedEvents.forEach((eventName) => {
-                      document.addEventListener(eventName, executeCallbackWithTimer, true);
-                    });
-                  }
+  const addEventListeners = () => {
+    trackedEvents.forEach((eventName) => {
+      document.addEventListener(eventName, () => {
+        executeCallbackWithTimer();
+        activityCallback();
+      }, true);
+    });
+  }
 
-                  const removeEventListeners = () => {
-                    trackedEvents.forEach((eventName) => {
-                      document.removeEventListener(eventName, executeCallbackWithTimer, true);
-                    });
-                  }
+  const removeEventListeners = () => {
+    trackedEvents.forEach((eventName) => {
+      document.removeEventListener(eventName, () => {
+        executeCallbackWithTimer();
+        activityCallback();
+      }, true);
+    });
+  }
 
-                  addEventListeners();
-                  executeCallbackWithTimer();
+  addEventListeners();
+  executeCallbackWithTimer();
 
-                  return () => {
-                    removeEventListeners();
-                    clearTimeout(timerID);
-                  }
-                };
+  return () => {
+    removeEventListeners();
+    clearTimeout(timerID);
+  }
+};
             
             const tabEvents = {
-                  RE_INIT: 'reinit',
-                  LOG_OUT: 'logOut'
-                }
+  RE_INIT: 'reinit',
+  LOG_OUT: 'logOut'
+}
 
-const observeForUserActivity = (logOutCallback) => {
+ const observeForUserActivity = (logOutCallback) => {
   const { sendMessage, setEventListener, clean } = tabCommunicationProvider();
 
   const logOut = () => {
@@ -134,12 +140,11 @@ const observeForUserActivity = (logOutCallback) => {
 
   setEventListener(callback)
 }
-
-const logOut = () => {
+ const logOut = () => {
     alert('/logout');
 }
 
-observeForUserActivity(logOut)
+observeForUserActivity(logOut);
         </script>
 </body>
 
