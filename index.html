@@ -25,127 +25,34 @@
         })();
         </script> -->
         <!-- {/literal} -->
-        <script type="text/javascript">
-            const tabCommunicationProvider = () => {
-  const channel = new BroadcastChannel('lt-customer-care');
+       <script type='text/javascript'>
+    window['ltOmniButtonConfig'] = {
+      buttons: [
+        {
+          type: 'whatsapp',
+          phone: '+79998886655'
+        },
+        {
+          type: 'link',
+          url: 'https://livetex.ru/blog/'
+        },
+        {
+          type: 'youtube',
+          url: 'https://example.com/'
+        }
+      ]
+    };
 
-  return {
-    sendMessage: (message) => channel.postMessage(message),
-    setEventListener: (callback) => {
-      channel.onmessage = (event) => {
-        callback(event);
-      };
-    },
-    clean: () => {
-      channel.close();
-    }
-  }
-}
-            
-             const idleLogout = (timeOutCallback, activityCallback) => {
-  let timerID;
-
-  const trackedEvents = [
-    'mousemove',
-    'mousedown',
-    'click',
-    'keydown',
-    'scroll'
-  ];
-
-  const executeCallbackWithTimer = (e) => {
-    clearTimeout(timerID);
-    timerID = setTimeout(timeOutCallback, 10000);
-  }
-
-  const addEventListeners = () => {
-    trackedEvents.forEach((eventName) => {
-      document.addEventListener(eventName, () => {
-        executeCallbackWithTimer();
-        activityCallback();
-      }, true);
-    });
-  }
-
-  const removeEventListeners = () => {
-    trackedEvents.forEach((eventName) => {
-      document.removeEventListener(eventName, () => {
-        executeCallbackWithTimer();
-        activityCallback();
-      }, true);
-    });
-  }
-
-  addEventListeners();
-  executeCallbackWithTimer();
-
-  return () => {
-    removeEventListeners();
-    clearTimeout(timerID);
-  }
-};
-            
-            const tabEvents = {
-  RE_INIT: 'reinit',
-  LOG_OUT: 'logOut'
-}
-
- const observeForUserActivity = (logOutCallback) => {
-  const { sendMessage, setEventListener, clean } = tabCommunicationProvider();
-
-  const logOut = () => {
-    logOutCallback();
-    sendMessage({ type: tabEvents.LOG_OUT });
-  };
-
-  const onActivityCallback = () => {
-    sendMessage({ type: tabEvents.RE_INIT });
-  }
-
-  let cleanTrackActivity = idleLogout(logOut, onActivityCallback);
-
-  sendMessage({ type: tabEvents.RE_INIT });
-
-  const reInitTracker = () => {
-    cleanTrackActivity();
-    cleanTrackActivity = idleLogout(logOut, onActivityCallback);
-  }
-
-  const visibilitychangeHandler = () => {
-    if (document.hidden) {
-      return;
-    }
-    reInitTracker();
-    sendMessage({ type: tabEvents.RE_INIT })
-  }
-
-  document.removeEventListener('visibilitychange', visibilitychangeHandler);
-
-  document.addEventListener('visibilitychange', visibilitychangeHandler);
-
-  const callback = ({ data: { type }}) => {
-    switch (type) {
-      case tabEvents.RE_INIT:
-        reInitTracker();
-        break;
-      case tabEvents.LOG_OUT:
-        cleanTrackActivity();
-        clean();
-        logOutCallback();
-        break;
-      default:
-        break;
-    }
-  }
-
-  setEventListener(callback)
-}
- const logOut = () => {
-    alert('/logout');
-}
-
-observeForUserActivity(logOut);
-        </script>
+    (function () {
+      var t = document.createElement('script');
+      t.type = 'text/javascript';
+      t.async = true;
+      t.src = 'https://widget-multibutton.alpha.dev.livetex.ru/container.main.js';
+      var c = document.getElementsByTagName('script')[0];
+      if (c) c.parentNode.insertBefore(t, c);
+      else document.documentElement.firstElementChild.appendChild(t);
+    })();
+  </script>
 </body>
 
 </html>
